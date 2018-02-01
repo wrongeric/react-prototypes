@@ -49,12 +49,14 @@ class ContactForm extends Component {
 
         return (
             <form onSubmit={this.handleSubmit}>
-                <Field name="firstName" label="First Name" type="text" value={firstName} onChange={this.handleInputChange}/>
+                <Field name="firstName" label="First Name" type="text" value={firstName} onChange={ (event) => this.handleInputChange(event)}/>
                 <Field name="lastName" label="Last Name" type="text" value={lastName} onChange={this.handleInputChange}/>
                 <Field name="phone" label="Phone Number" type="tel" value={phone} onChange={this.handleInputChange}/>
                 <Field name="email" label="Email" type="email" value={email} onChange={this.handleInputChange}/>
-                <button>Add Contact</button>
-                <button type='button' onClick={this.reset}>Reset</button>
+                <div className='col-xs-3'>
+                    <button className='btn-info'>Add Contact</button>
+                    <button type='button' onClick={this.reset} className={'btn-danger margin-left'}>Reset</button>
+                </div>
             </form>
         )
     }
